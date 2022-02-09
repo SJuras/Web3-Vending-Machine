@@ -13,9 +13,9 @@ export default function VendingMachine(){
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className="navbar mt-4 mb-4">
-        <div className="container">
+        <div className="container navbar-back">
           <div className="navbar-brand">
-            <h1>Vending Machine</h1>
+            <h1>Brendan</h1>
           </div>
           <div className="navbar-end">
             <button className="button is-primary">
