@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Web3 from 'web3';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import vmContract from '../blockchain/vending.js';
 
 import 'bulma/css/bulma.css';
 import styles from '../styles/VendingMachine.module.css';
@@ -8,13 +9,33 @@ import styles from '../styles/VendingMachine.module.css';
 
 const VendingMachine = () => {
   const [error, setError] = useState("");
+
+  const [inventory, setInventory] = useState("");
+  const [myDonutCount, setMyDonutCount] = useState("");
+
   let web3;
+
+  useEffect(() => {
+    getInventoryHandler()
+  })
+
+  const getInventoryHandler = async () => {
+    const inventory = await vmContract.methods.getVendingMachineBalance().call()
+    setInventory(inventory)
+  }
+
+  const getMyDonutCountHandler = async () => {
+    const accounts = await web3.eth.getAccounts()
+    const count = await vmContract.methods.donutBalances(accounts[0]).call()
+    setMyDonutCount(count);
+  }
 
   const connectWalletHandler = async () => {
     if(typeof window !== "undefined" && typeof window.ethereum !== "undefined"){
       try {
         await window.ethereum.request({ method: "eth_requestAccounts" })
         web3 = new Web3(window.ethereum);
+        getMyDonutCountHandler()
       } catch(err) {
         setError(err.message);
       }
@@ -37,6 +58,8 @@ const VendingMachine = () => {
             <h1>Brendan</h1>
           </div>
           <div className="navbar-end">
+
+            {/* connect to MetaMask */}
             <button onClick={connectWalletHandler} className="button is-primary">
               Connect Wallet
             </button>
@@ -44,9 +67,17 @@ const VendingMachine = () => {
         </div>
       </nav>
 
+      {/* vending machine inventory */}
       <section>
         <div className="container">
-          <p>Placeholder Text</p>
+          <h2>Vending Machine Inventory: {inventory}</h2>
+        </div>
+      </section>
+
+      {/* user inventory */}
+      <section>
+        <div className="container">
+          <h2>My donuts: {myDonutCount}</h2>
         </div>
       </section>
 
