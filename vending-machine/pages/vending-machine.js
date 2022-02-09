@@ -8,7 +8,7 @@ export default function VendingMachine(){
   return(
     <div className={styles.main}>
       <Head>
-        <title>Vending Machine</title>
+        <title>Brendan | Decentralized Vending Machine</title>
         <meta name="description" content="Blockchain vending machine app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
