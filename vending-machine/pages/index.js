@@ -4,6 +4,8 @@ import Link from 'next/link'
 
 import styles from '../styles/Home.module.css'
 
+import Footer from '../components/Footer.js';
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -23,7 +25,7 @@ export default function Home() {
         that's the network you should connect your MetaMask to.
       </p>
       <p>
-        If you dont have MetaMask installed yet, no problem, you can get it here:
+        If you don't have MetaMask installed yet, no problem, you can get it here:
       </p>
       <a href="https://metamask.io/">metamask.io</a>
       <p>
@@ -44,7 +46,12 @@ export default function Home() {
       <Link href="/vending-machine">
         To Veding Machine
       </Link>
+      <p>
+        Brendan was inspired by a character from game Cyberpunk 2077.
+      </p>
 
+
+      <Footer />
     </div>
   )
 }
