@@ -81,8 +81,23 @@ const VendingMachine = () => {
         </div>
       </section>
 
+      {/* buy donuts */}
       <section>
-        <div className="containerhas-text-danger">
+        <div className="container">
+          <div className="field">
+            <label className="label">Buy Donuts</label>
+            <div className="control">
+              <input className="input" type="text" placeholder="Enter amount" />
+            </div>
+            <button className="button is-primary">
+              Buy
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container has-text-danger">
           <p>{error}</p>
         </div>
       </section>
