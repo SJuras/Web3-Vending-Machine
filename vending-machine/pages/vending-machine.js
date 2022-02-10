@@ -104,12 +104,12 @@ const VendingMachine = () => {
         <div className="w-1/2 flex items-center">
           <div className="w-full md:w-1/2">
             <h4 className="text-4xl lg:text-6xl text-white font-Infinite">HyperDonut!</h4>
-            <p className="text-2xl text-white mb-4">Hyper Flavor for Hyper Pleasure*</p>
+            <p className="text-center md:text text-2xl text-white mb-4">Hyper Flavor for Hyper Pleasure*</p>
             <div className="w-full flex flex-col md:flex-row items-center mb-8">
               <h5 className="text-2xl lg:text-4xl text-white mr-4">Only</h5>
               <h4 className="text-5xl text-white font-Infinite">1 Gwei</h4>
             </div>
-            <p className="text-white">*Contains: Soy, Shellfish, Waterbug and Artificial Dye</p>
+            <p className="text-center md:text-left text-white">*Contains: Soy, Shellfish, Waterbug and Artificial Dye</p>
           </div>
         </div>
       </div>
@@ -117,11 +117,15 @@ const VendingMachine = () => {
       {/* half and half */}
       <div className="w-full flex flex-col md:flex-row justify-center items-center bg-brendanPink">
         <div className="w-full md:w-1/2 flex justify-center items-center">
-          Pink
+          <div className="">
+            <h2 className="text-white text-4xl">Donuts Available: {inventory}</h2>
+          </div>
         </div>
         <div className="w-full md:w-1/2 flex justify-center items-center bg-brendanLightGreen p-4 md:rounded-tl-lg">
           <div className="w-full p-4 border-4 border-zinc-900 bg-brendanDarkGreen rounded-lg">
-            green
+            <div className="">
+              <h2 className="text-center md:text-left text-white text-2xl">My donuts: {myDonutCount}</h2>
+            </div>
           </div>
         </div>
       </div>
