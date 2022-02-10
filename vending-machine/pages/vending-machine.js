@@ -117,7 +117,8 @@ const VendingMachine = () => {
         <div className="w-full md:w-1/2 flex items-center">
           <div className="w-full md:w-1/2">
             <h4 className="text-center md:text-left text-4xl lg:text-6xl text-white font-Infinite">HyperDonut!</h4>
-            <p className="text-center md:text-left text-2xl text-white mb-4">Hyper Flavor for Hyper Pleasure*</p>
+            <h4 className="text-center md:text-left text-4xl lg:text-5xl text-white font-Infinite mb-2 font-bold">ハイパードーナツ！</h4>
+            <p className="text-center md:text-left text-2xl text-white mb-6">Hyper Flavor for Hyper Pleasure*</p>
             <div className="w-full flex flex-col md:flex-row items-center mb-8">
               <h5 className="text-2xl lg:text-4xl text-white mr-4">Only</h5>
               <h4 className="text-5xl text-white font-Infinite">1 Gwei</h4>

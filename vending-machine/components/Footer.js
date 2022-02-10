@@ -6,19 +6,19 @@ export default function Home() {
   return (
     <footer className="bg-brendanLightGreen p-4">
       <div className="bg-brendanDarkGreen p-4 text-brendanWhite rounded-lg mb-4 border-4 border-zinc-900 w-full flex flex-col md:flex-row justify-center items-start">
-        <div className="w-1/3">
+        <div className="w-full md:w-1/3 mb-4">
           <h4 className="font-Infinite text-xl">BRENDAN</h4>
           <p>Decentralized Vending Machine</p>
         </div>
-        <div className="w-1/3">
-          <h5>Follow Us</h5>
+        <div className="w-full md:w-1/3 mb-4">
+          <h5 className="text-xl">Follow Us</h5>
           <ul className="">
             <li className="group"><a href="https://github.com/SJuras" className="flex group"><span><FaGithub className="inline transition duration-300 mr-1 group-hover:text-brendanPink" /></span> <p className="transition duration-300 group-hover:text-brendanPink">GitHub</p></a></li>
             <li className="group"><a href="" className="flex group"><span><FaFacebook className="inline transition duration-300 mr-1 group-hover:text-brendanPink" /></span><p className="transition duration-300 group-hover:text-brendanPink">Facebook</p></a></li>
           </ul>
         </div>
-        <div className="w-1/3 text-left md:text-right">
-          <h5>Useful Links</h5>
+        <div className="w-full md:w-1/3 text-left md:text-right mb-4">
+          <h5 className="text-xl">Useful Links</h5>
           <ul>
             <li className="transition duration-300 hover:text-brendanPink"><a href="https://ethereum.org/en/">Ethereum</a></li>
             <li className="transition duration-300 hover:text-brendanPink"><a href="https://metamask.io/">MetaMask</a></li>
@@ -27,7 +27,7 @@ export default function Home() {
           </ul>
         </div>
       </div>
-      <div className="bg-brendanDarkGreen p-4 text-brendanWhite rounded-lg border-4 border-zinc-900 flex justify-between items-center">
+      <div className="bg-brendanDarkGreen p-4 text-brendanWhite rounded-lg border-4 border-zinc-900 flex flex-col md:flex-row justify-between items-center">
         <p>&copy; Brendan 2022</p>
         <p>Created with <span><FaHeart className="inline" /></span> by: Sarif-Design</p>
       </div>
