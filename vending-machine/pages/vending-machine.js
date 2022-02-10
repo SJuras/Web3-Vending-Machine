@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image'
 import Web3 from 'web3';
 import { useState, useEffect } from 'react';
 import vmContract from '../blockchain/vending.js';
@@ -68,6 +69,37 @@ const VendingMachine = () => {
           </div>
         </div>
       </nav>
+
+      {/* pictures */}
+      <div className="w-full flex flex-col md:flex-row justify-center items-center bg-brendanPink py-4">
+        <div className="w-1/2 flex justify-center items-center mb-4 md:mb-0">
+          <div className="w-3/4 md:w-1/2">
+            <img className="object-contain" src="images/donut.png" alt="cyberpunk donut" />
+          </div>
+        </div>
+        <div className="w-1/2 flex items-center">
+          <div className="w-full md:w-1/2">
+            <h4 className="text-4xl lg:text-6xl text-white font-Infinite">HyperDonut!</h4>
+            <p className="text-2xl text-white mb-4">Hyper Taste</p>
+            <div className="w-full flex flex-col md:flex-row items-center">
+              <h5 className="text-2xl lg:text-4xl text-white mr-4">Only</h5>
+              <h4 className="text-5xl text-white font-Infinite">1 Gwei</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* half and half */}
+      <div className="w-full flex flex-col md:flex-row justify-center items-center bg-brendanPink">
+        <div className="w-full md:w-1/2 flex justify-center items-center">
+          Pink
+        </div>
+        <div className="w-full md:w-1/2 flex justify-center items-center bg-brendanLightGreen p-4">
+          <div className="w-full p-4 border-4 border-zinc-900 bg-brendanDarkGreen rounded-lg">
+            green
+          </div>
+        </div>
+      </div>
 
       {/* vending machine inventory */}
       <section>
