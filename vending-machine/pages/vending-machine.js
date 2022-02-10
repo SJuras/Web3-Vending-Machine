@@ -85,12 +85,12 @@ const VendingMachine = () => {
       <section>
         <div className="container">
           <div className="field">
-            <label className="label">Buy Donuts</label>
+            <label className="label">Buy donuts</label>
             <div className="control">
               <input className="input" type="text" placeholder="Enter amount" />
             </div>
             <button className="button is-primary">
-              Buy
+              Buy Donut
             </button>
           </div>
         </div>
