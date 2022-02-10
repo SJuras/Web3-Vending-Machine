@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h2>BRENDAN</h2>
+      <h2 className="underline">BRENDAN</h2>
       <h1>Decentralized Vending Machine</h1>
       <p>
         Hi there, I'm Brendan, decentralized vending machine powered by a smart contract.
@@ -37,6 +37,10 @@ export default function Home() {
         <li><a href="https://rinkeby.faucet.epirus.io/">rinkeby.faucet.epirus.io</a></li>
         <li><a href="https://faucets.chain.link/rinkeby">faucets.chain.link/rinkeby</a></li>
       </ul>
+      <p>
+        Now you are ready to buy some donuts. Unfortunately, donuts are not real, this is just a testing phase.<br />
+        However, in next version, the donuts you can buy will be NFTs so stay tuned for the latest version of this dApp.
+      </p>
       <p>
         A donut will costs 1 Gwei.
       </p>

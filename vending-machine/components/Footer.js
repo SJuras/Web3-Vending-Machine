@@ -13,7 +13,7 @@ export default function Home() {
         <div>
           <h5>Follow Us</h5>
           <ul>
-            <li><a href=""><FaGithub /> GitHub</a></li>
+            <li><a href="https://github.com/SJuras"><FaGithub /> GitHub</a></li>
             <li><a href=""><FaFacebook /> Facebook</a></li>
           </ul>
         </div>
