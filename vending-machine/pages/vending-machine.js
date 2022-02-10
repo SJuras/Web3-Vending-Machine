@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import { useState, useEffect } from 'react';
 import vmContract from '../blockchain/vending.js';
 
-import 'bulma/css/bulma.css';
+
 import styles from '../styles/VendingMachine.module.css';
 
 import Footer from '../components/Footer.js';
@@ -48,21 +48,21 @@ const VendingMachine = () => {
   }
 
   return(
-    <div className={styles.main}>
+    <div className="w-full bg-brendanWhite">
       <Head>
         <title>Brendan | Decentralized Vending Machine</title>
         <meta name="description" content="Blockchain vending machine app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className="navbar mt-4 mb-4">
-        <div className="container">
+      <nav className="p-2 mt-0 mb-4">
+        <div className="w-full flex justify-between">
           <div className="navbar-brand">
-            <h1>BRENDAN</h1>
+            <h1 className="text-2xl md:text-4xl font-Infinite text-brendanPink">BRENDAN</h1>
           </div>
           <div className="navbar-end">
 
             {/* connect to MetaMask */}
-            <button onClick={connectWalletHandler} className="button is-primary">
+            <button onClick={connectWalletHandler} className="font-Ubuntu bg-brendanPink p-2 text-brendanWhite">
               Connect Wallet
             </button>
           </div>
