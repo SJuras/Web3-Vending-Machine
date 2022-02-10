@@ -57,7 +57,7 @@ const VendingMachine = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className="p-2 mt-0 mb-4">
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between items-center">
           <div className="navbar-brand cursor-pointer">
             <Link href="/">
               <h1 className="text-2xl md:text-4xl font-Infinite text-brendanPink">BRENDAN</h1>
@@ -74,23 +74,36 @@ const VendingMachine = () => {
       </nav>
 
       {/* eyes */}
-      <div className="w-full flex justify-around items-center">
-        <div className="w-1/4 p-2 border-4 border-white rounded-lg flex justify-center items-center bg-brendanBrown">
-          <div className="w-1/8 p-4 px-8 bg-white rounded-lg"></div>
+      <div className="w-full flex justify-around items-center mb-2 md:mb-4">
+        <div className="w-1/4 md:w-1/6">
+          <div className="w-full p-2 md:p-4 py-4 md:py-6 bg-brendanBrown mb-2 rounded-lg"></div>
+          <div className="w-full border-4 border-white rounded-lg">
+            <div className="w-full p-2 md:p-4"></div>
+            <div className="w-full p-1 md:p-2 flex justify-center items-center bg-brendanBrown rounded-bl-lg rounded-br-lg">
+              <div className="w-1/8 p-2 md:p-4 px-4 md:px-8 bg-white rounded-lg"></div>
+            </div>
+          </div>
         </div>
-        <div className="w-1/4 p-2 border-4 border-white rounded-lg flex justify-center items-center bg-brendanBrown">
-          <div className="w-1/8 p-4 px-8 bg-white rounded-lg"></div>
+
+        <div className="w-1/4 md:w-1/6">
+          <div className="w-full p-2 md:p-4 py-4 md:py-6 bg-brendanBrown mb-2 rounded-lg"></div>
+          <div className="w-full border-4 border-white rounded-lg">
+            <div className="w-full p-2 md:p-4"></div>
+            <div className="w-full p-1 md:p-2 flex justify-center items-center bg-brendanBrown rounded-bl-lg rounded-br-lg">
+              <div className="w-1/8 p-2 md:p-4 px-4 md:px-8 bg-white rounded-lg"></div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* nose */}
       <div className="w-full flex justify-around items-center pb-8">
         <div className="flex">
-          <div className="mx-2 px-4 py-10 bg-brendanPink rounded-lg"></div>
-          <div className="mx-2 px-4 py-10 bg-brendanPink rounded-lg"></div>
-          <div className="mx-2 px-4 py-10 bg-brendanPink rounded-lg"></div>
-          <div className="mx-2 px-4 py-10 bg-brendanPink rounded-lg"></div>
-          <div className="mx-2 px-4 py-10 bg-brendanPink rounded-lg"></div>
+          <div className="mx-1 md:mx-2 px-2 md:px-4 py-6 md:py-10 bg-brendanPink rounded-lg"></div>
+          <div className="mx-1 md:mx-2 px-2 md:px-4 py-6 md:py-10 bg-brendanPink rounded-lg"></div>
+          <div className="mx-1 md:mx-2 px-2 md:px-4 py-6 md:py-10 bg-brendanPink rounded-lg"></div>
+          <div className="mx-1 md:mx-2 px-2 md:px-4 py-6 md:py-10 bg-brendanPink rounded-lg"></div>
+          <div className="mx-1 md:mx-2 px-2 md:px-4 py-6 md:py-10 bg-brendanPink rounded-lg"></div>
         </div>
       </div>
 
@@ -101,13 +114,14 @@ const VendingMachine = () => {
             <img className="object-contain" src="images/donut.png" alt="cyberpunk donut" />
           </div>
         </div>
-        <div className="w-1/2 flex items-center">
+        <div className="w-full md:w-1/2 flex items-center">
           <div className="w-full md:w-1/2">
-            <h4 className="text-4xl lg:text-6xl text-white font-Infinite">HyperDonut!</h4>
-            <p className="text-center md:text text-2xl text-white mb-4">Hyper Flavor for Hyper Pleasure*</p>
+            <h4 className="text-center md:text-left text-4xl lg:text-6xl text-white font-Infinite">HyperDonut!</h4>
+            <p className="text-center md:text-left text-2xl text-white mb-4">Hyper Flavor for Hyper Pleasure*</p>
             <div className="w-full flex flex-col md:flex-row items-center mb-8">
               <h5 className="text-2xl lg:text-4xl text-white mr-4">Only</h5>
               <h4 className="text-5xl text-white font-Infinite">1 Gwei</h4>
+              <span className="ml-2 text-white">+ Gas Fee</span>
             </div>
             <p className="text-center md:text-left text-white">*Contains: Soy, Shellfish, Waterbug and Artificial Dye</p>
           </div>
@@ -118,13 +132,13 @@ const VendingMachine = () => {
       <div className="w-full flex flex-col md:flex-row justify-center items-center bg-brendanPink">
         <div className="w-full md:w-1/2 flex justify-center items-center">
           <div className="">
-            <h2 className="text-white text-4xl">Donuts Available: {inventory}</h2>
+            <h2 className="text-white text-4xl text-center md:text">Donuts Available: {inventory}</h2>
           </div>
         </div>
         <div className="w-full md:w-1/2 flex justify-center items-center bg-brendanLightGreen p-4 md:rounded-tl-lg">
           <div className="w-full p-4 border-4 border-zinc-900 bg-brendanDarkGreen rounded-lg">
             <div className="">
-              <h2 className="text-center md:text-left text-white text-2xl">My donuts: {myDonutCount}</h2>
+              <h2 className="text-center md:text-left text-white text-2xl">Your donuts: {myDonutCount}</h2>
             </div>
           </div>
         </div>
