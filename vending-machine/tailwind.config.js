@@ -12,6 +12,7 @@ module.exports = {
       },
       colors: {
         brendanPink: '#d56fa4',
+        brendanLightPink: '#f27fba',
         brendanWhite: '#f8efe1',
         brendanBrown: '#bf7b69',
         brendanLightGreen: '#0e4826',

@@ -60,13 +60,13 @@ const VendingMachine = () => {
         <div className="w-full flex justify-between items-center">
           <div className="navbar-brand cursor-pointer">
             <Link href="/">
-              <h1 className="text-2xl md:text-4xl font-Infinite text-brendanPink">BRENDAN</h1>
+              <h1 className="text-2xl md:text-4xl font-Infinite text-brendanPink transition duration-300 hover:text-brendanLightPink">BRENDAN</h1>
             </Link>
           </div>
           <div className="navbar-end">
 
             {/* connect to MetaMask */}
-            <button onClick={connectWalletHandler} className="font-Ubuntu bg-brendanPink p-2 text-brendanWhite">
+            <button onClick={connectWalletHandler} className="font-Ubuntu bg-brendanPink p-2 text-brendanWhite transition duration-300 hover:bg-brendanLightPink">
               Connect Wallet
             </button>
           </div>

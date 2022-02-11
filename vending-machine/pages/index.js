@@ -71,7 +71,7 @@ export default function Home() {
         <div className="w-full md:w-2/3 bg-white text-center mx-auto rounded-lg p-4 m-4">
           <div className="py-6">
             <Link href="/vending-machine">
-              <button className="font-Ubuntu text-xl bg-brendanPink px-6 py-4 text-brendanWhite rounded">Buy Donuts</button>
+              <button className="font-Ubuntu text-xl bg-brendanPink px-6 py-4 text-brendanWhite rounded transition duration-300 hover:bg-brendanLightPink">Buy Donuts</button>
             </Link>
             <p>
               First time here? <br />
@@ -110,7 +110,7 @@ export default function Home() {
             Good, now let's go get you some donuts.
           </p>
           <Link href="/vending-machine">
-            <button className="font-Ubuntu bg-brendanPink p-2 text-brendanWhite rounded mb-4">To Veding Machine</button>
+            <button className="font-Ubuntu bg-brendanPink p-2 text-brendanWhite rounded mb-4 transition duration-300 hover:bg-brendanLightPink">To Veding Machine</button>
           </Link>
           <p className="font-Ubuntu">
             Now, you might remember me from a certain game. That's right, Cyberpunk 2077.
