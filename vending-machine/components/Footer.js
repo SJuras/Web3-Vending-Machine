@@ -13,8 +13,8 @@ export default function Home() {
         <div className="w-full md:w-1/3 mb-4">
           <h5 className="text-xl">Follow Us</h5>
           <ul className="">
-            <li className="group"><a href="https://github.com/SJuras" className="flex group"><span><FaGithub className="inline transition duration-300 mr-1 group-hover:text-brendanPink" /></span> <p className="transition duration-300 group-hover:text-brendanPink">GitHub</p></a></li>
-            <li className="group"><a href="" className="flex group"><span><FaFacebook className="inline transition duration-300 mr-1 group-hover:text-brendanPink" /></span><p className="transition duration-300 group-hover:text-brendanPink">Facebook</p></a></li>
+            <li className="group"><a href="https://github.com/SJuras" className="flex group"><span><FaGithub className="inline transition duration-300 mr-1 group-hover:text-brendanPink -mt-1" /></span> <p className="transition duration-300 group-hover:text-brendanPink">GitHub</p></a></li>
+            <li className="group"><a href="https://www.facebook.com/stjepko.juras" className="flex group"><span><FaFacebook className="inline transition duration-300 mr-1 group-hover:text-brendanPink -mt-1" /></span><p className="transition duration-300 group-hover:text-brendanPink">Facebook</p></a></li>
           </ul>
         </div>
         <div className="w-full md:w-1/3 text-left md:text-right mb-4">

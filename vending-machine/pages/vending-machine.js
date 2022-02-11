@@ -56,7 +56,7 @@ const VendingMachine = () => {
         <meta name="description" content="Blockchain vending machine app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className="p-2 mt-0 mb-4">
+      <nav className="p-2 mt-0 mb-4 max-w-7xl mx-auto">
         <div className="w-full flex justify-between items-center">
           <div className="navbar-brand cursor-pointer">
             <Link href="/">
@@ -76,21 +76,21 @@ const VendingMachine = () => {
       {/* eyes */}
       <div className="w-full flex justify-around items-center mb-2 md:mb-4">
         <div className="w-1/4 md:w-1/6">
-          <div className="w-full p-2 md:p-4 py-4 md:py-6 bg-brendanBrown mb-2 rounded-lg"></div>
+          <div className="w-full p-2 md:p-4 py-4 md:py-6 bg-brendanBrown mb-2 rounded-lg animate-[updown_10s_infinite]"></div>
           <div className="w-full border-4 border-white rounded-lg">
             <div className="w-full p-2 md:p-4"></div>
-            <div className="w-full p-1 md:p-2 flex justify-center items-center bg-brendanBrown rounded-bl-lg rounded-br-lg">
-              <div className="w-1/8 p-2 md:p-4 px-4 md:px-8 bg-white rounded-lg"></div>
+            <div className="w-full p-1 md:p-2 flex justify-center items-center bg-brendanBrown rounded-bl-lg rounded-br-lg overflow-x-hidden">
+              <div className="w-1/8 p-2 md:p-4 px-4 md:px-8 bg-white rounded-lg animate-[wiggle_20s_infinite]"></div>
             </div>
           </div>
         </div>
 
         <div className="w-1/4 md:w-1/6">
-          <div className="w-full p-2 md:p-4 py-4 md:py-6 bg-brendanBrown mb-2 rounded-lg"></div>
+          <div className="w-full p-2 md:p-4 py-4 md:py-6 bg-brendanBrown mb-2 rounded-lg animate-[updown_10s_infinite]"></div>
           <div className="w-full border-4 border-white rounded-lg">
             <div className="w-full p-2 md:p-4"></div>
-            <div className="w-full p-1 md:p-2 flex justify-center items-center bg-brendanBrown rounded-bl-lg rounded-br-lg">
-              <div className="w-1/8 p-2 md:p-4 px-4 md:px-8 bg-white rounded-lg"></div>
+            <div className="w-full p-1 md:p-2 flex justify-center items-center bg-brendanBrown rounded-bl-lg rounded-br-lg overflow-x-hidden">
+              <div className="w-1/8 p-2 md:p-4 px-4 md:px-8 bg-white rounded-lg animate-[wiggle_20s_infinite]"></div>
             </div>
           </div>
         </div>
@@ -108,20 +108,20 @@ const VendingMachine = () => {
       </div>
 
       {/* pictures */}
-      <div className="w-full flex flex-col md:flex-row justify-center items-center bg-brendanPink py-4">
+      <div className="w-full flex flex-col md:flex-row justify-center items-center bg-brendanPink py-6">
         <div className="w-1/2 flex justify-center items-center mb-4 md:mb-0">
           <div className="w-3/4 md:w-1/2">
             <img className="object-contain" src="images/donut.png" alt="cyberpunk donut" />
           </div>
         </div>
         <div className="w-full md:w-1/2 flex items-center">
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-2/3">
             <h4 className="text-center md:text-left text-4xl lg:text-6xl text-white font-Infinite">HyperDonut!</h4>
             <h4 className="text-center md:text-left text-4xl lg:text-5xl text-white font-Infinite mb-2 font-bold">ハイパードーナツ！</h4>
             <p className="text-center md:text-left text-2xl text-white mb-6">Hyper Flavor for Hyper Pleasure*</p>
             <div className="w-full flex flex-col md:flex-row items-center mb-8">
               <h5 className="text-2xl lg:text-4xl text-white mr-4">Only</h5>
-              <h4 className="text-5xl text-white font-Infinite">1 Gwei</h4>
+              <h4 className="text-4xl md:text-3xl lg:text-5xl text-white font-Infinite">1 Gwei</h4>
               <span className="ml-2 text-white">+ Gas Fee</span>
             </div>
             <p className="text-center md:text-left text-white">*Contains: Soy, Shellfish, Waterbug and Artificial Dye</p>

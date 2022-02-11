@@ -17,6 +17,22 @@ module.exports = {
         brendanLightGreen: '#0e4826',
         brendanDarkGreen: '#0a2d2b'
       },
+      keyframes: {
+        wiggle: {
+          '0%': { transform: 'translateX(-180%)' },
+          '50%': { transform: 'translateX(200%)' },
+          '100%': { transform: 'translateX(-180%)' },
+        },
+        updown: {
+          '0%': { transform: 'translateY(0%)'},
+          '50%': { transform: 'translateY(-50%)'},
+          '100%': { transform: 'translateY(0%)'},
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 20s infinite',
+        updown: 'updown 10s infinite',
+      },
     },
   },
   plugins: [],

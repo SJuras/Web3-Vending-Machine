@@ -17,21 +17,21 @@ export default function Home() {
       {/* eyes */}
       <div className="w-full flex justify-around items-center mb-2 md:mb-4 pt-8">
         <div className="w-1/4 md:w-1/6">
-          <div className="w-full p-2 md:p-4 py-4 md:py-6 bg-brendanBrown mb-2 rounded-lg"></div>
+          <div className="w-full p-2 md:p-4 py-4 md:py-6 bg-brendanBrown mb-2 rounded-lg animate-[updown_10s_infinite]"></div>
           <div className="w-full border-4 border-white rounded-lg">
             <div className="w-full p-2 md:p-4"></div>
-            <div className="w-full p-1 md:p-2 flex justify-center items-center bg-brendanBrown rounded-bl-lg rounded-br-lg">
-              <div className="w-1/8 p-2 md:p-4 px-4 md:px-8 bg-white rounded-lg"></div>
+            <div className="w-full p-1 md:p-2 flex justify-center items-center bg-brendanBrown rounded-bl-lg rounded-br-lg overflow-x-hidden">
+              <div className="w-1/8 p-2 md:p-4 px-4 md:px-8 bg-white rounded-lg animate-[wiggle_20s_infinite]"></div>
             </div>
           </div>
         </div>
 
         <div className="w-1/4 md:w-1/6">
-          <div className="w-full p-2 md:p-4 py-4 md:py-6 bg-brendanBrown mb-2 rounded-lg"></div>
+          <div className="w-full p-2 md:p-4 py-4 md:py-6 bg-brendanBrown mb-2 rounded-lg animate-[updown_10s_infinite]"></div>
           <div className="w-full border-4 border-white rounded-lg">
             <div className="w-full p-2 md:p-4"></div>
-            <div className="w-full p-1 md:p-2 flex justify-center items-center bg-brendanBrown rounded-bl-lg rounded-br-lg">
-              <div className="w-1/8 p-2 md:p-4 px-4 md:px-8 bg-white rounded-lg"></div>
+            <div className="w-full p-1 md:p-2 flex justify-center items-center bg-brendanBrown rounded-bl-lg rounded-br-lg overflow-x-hidden">
+              <div className="w-1/8 p-2 md:p-4 px-4 md:px-8 bg-white rounded-lg animate-[wiggle_20s_infinite]"></div>
             </div>
           </div>
         </div>
