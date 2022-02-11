@@ -28,10 +28,16 @@ module.exports = {
           '50%': { transform: 'translateY(-50%)'},
           '100%': { transform: 'translateY(0%)'},
         },
+        twitch: {
+          '0%': { transform: 'rotate(0deg)'},
+          '5%': { transform: 'rotate(30deg)'},
+          '10%, 100%': { transform: 'rotate(0deg)'},
+        },
       },
       animation: {
         wiggle: 'wiggle 20s infinite',
         updown: 'updown 10s infinite',
+        twitch: 'twitch 10s infinite',
       },
     },
   },

@@ -80,7 +80,7 @@ export default function Home() {
           </div>
 
           <p className="font-Ubuntu">
-            Hi there, I'm Brendan, decentralized vending machine powered by a smart contract.
+            Hi there mysterious stranger, I'm Brendan, decentralized vending machine powered by a smart contract.
           </p>
           <p className="font-Ubuntu">
             My smart contract is deployed on Rinkeby testnet,<br />

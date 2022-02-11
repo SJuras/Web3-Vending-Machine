@@ -110,7 +110,7 @@ const VendingMachine = () => {
       {/* pictures */}
       <div className="w-full flex flex-col md:flex-row justify-center items-center bg-brendanPink py-6">
         <div className="w-1/2 flex justify-center items-center mb-4 md:mb-0">
-          <div className="w-3/4 md:w-1/2">
+          <div className="w-3/4 md:w-1/2 animate-[twitch_10s_infinite]">
             <img className="object-contain" src="images/donut.png" alt="cyberpunk donut" />
           </div>
         </div>
