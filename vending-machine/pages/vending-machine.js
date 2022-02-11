@@ -14,6 +14,8 @@ import Footer from '../components/Footer.js';
 const VendingMachine = () => {
   const [error, setError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const [restockMsg, setRestockMsg] = useState("");
+  const [restockErrorMsg, setRestockErrorMsg] = useState("");
   const [inventory, setInventory] = useState("");
   const [myDonutCount, setMyDonutCount] = useState("");
   const [buyCount, setBuyCount] = useState("");
@@ -89,8 +91,10 @@ const VendingMachine = () => {
         from: address,
         gasPrice: '20000000000'
       });
+      setRestockMsg("Restock Complete");
     }catch(err){
       console.log(err);
+      setRestockErrorMsg("Only owner can restock the donut supply");
     }
   }
 
@@ -175,16 +179,57 @@ const VendingMachine = () => {
       </div>
 
       {/* half and half */}
-      <div className="w-full flex flex-col md:flex-row justify-center items-center bg-brendanPink">
+      <div className="w-full flex flex-col md:flex-row justify-center items-start bg-brendanPink">
         <div className="w-full md:w-1/2 flex justify-center items-center">
-          <div className="">
-            <h2 className="text-white text-4xl text-center md:text">Donuts Available: {inventory}</h2>
+          <div className="flex justify-center items-start">
+            <h2 className="text-white text-4xl text-center md:text mb-4">Donuts Available: {inventory}</h2>
           </div>
         </div>
         <div className="w-full md:w-1/2 flex justify-center items-center bg-brendanLightGreen p-4 md:rounded-tl-lg">
           <div className="w-full p-4 border-4 border-zinc-900 bg-brendanDarkGreen rounded-lg">
-            <div className="">
+            <div className="mb-4">
               <h2 className="text-center md:text-left text-white text-2xl">Your donuts: {myDonutCount}</h2>
+            </div>
+            {/* buy donuts */}
+            <div className="container flex flex-col md:flex-row justify-center items-center">
+              <div className="w-full md:w-1/2 p-2">
+                <div className="field">
+                  <label className="label text-white text-xl">Buy donuts</label>
+                  <div className="control">
+                    <input onChange={updateDonutQvt} className="input mt-2 p-2 text-white bg-brendanLightGreen border-2 border-green-400 rounded-lg outline-none mb-4 focus:border-green-200" type="text" placeholder="Enter amount" />
+                  </div>
+                  <button onClick={buyDonutHandler} className="button is-primary bg-brendanPink outline-none text-white p-4 rounded-lg mb-8 transition duration-300 hover:bg-brendanLightPink focus:bg-brendanLightPink">
+                    Buy Donut
+                  </button>
+                </div>
+                <h4 className="text-white mb-4 w-10/12">
+                  Bear in mind, it may take several minutes for your donut to be served,
+                  depending on the Blockchain traffic.<br /><br />
+                </h4>
+                <div className="w-full p-2 py-4 border-2 border-green-400 bg-brendanLightGreen rounded-lg mb-2">
+                  <p className="text-xl text-brendanLightPink">{successMsg}</p>
+                  <p className="text-xl text-red-300">{error}</p>
+                </div>
+              </div>
+              <div className="w-full md:w-1/2 p-2">
+                <div>
+                  <label className="text-white text-xl">Restock</label>
+                  <div>
+                    <input onChange={updateStockCount} className="input mt-2 p-2 text-white bg-brendanLightGreen border-2 border-green-400 rounded-lg outline-none mb-4 focus:border-green-200" type="text" placeholder="Stock Donuts" />
+                  </div>
+                  <button onClick={restockDonutHandler} className="bg-brendanLightGreen border-2 border-green-400 text-white p-4 mb-8 rounded-lg transition duration-300 hover:bg-green-400">
+                    Restock
+                  </button>
+                </div>
+                <h4 className="text-white mb-4 w-10/12">
+                  Only the maintenance can restock the donut supply. When the supply is depleted please
+                  constact the maintenance crew:<br />
+                </h4>
+                <div className="w-full p-2 py-4 border-2 border-green-400 bg-brendanLightGreen rounded-lg mb-2">
+                  <p className="text-xl text-brendanLightPink">{restockMsg}</p>
+                  <p className="text-xl text-red-300">{error}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -212,7 +257,7 @@ const VendingMachine = () => {
             <div className="control">
               <input onChange={updateDonutQvt} className="input" type="text" placeholder="Enter amount" />
             </div>
-            <button onClick={buyDonutHandler} className="button is-primary bg-brendanLightGreen border-2 border-white text-white p-4 rounded-lg transition duration-300 hover:bg-brendanPink">
+            <button onClick={buyDonutHandler} className="button is-primary bg-brendanPink border-2 border-white text-white p-4 rounded-lg transition duration-300 hover:bg-brendanLightPink">
               Buy Donut
             </button>
           </div>
@@ -230,9 +275,14 @@ const VendingMachine = () => {
           <div>
             <input onChange={updateStockCount} className="input" type="text" placeholder="Stock Donuts" />
           </div>
-          <button onClick={restockDonutHandler} className="">
+          <button onClick={restockDonutHandler} className="bg-brendanLightGreen border-2 border-white text-white p-4 rounded-lg transition duration-300 hover:bg-brendanPink">
             Restock
           </button>
+        </div>
+      </section>
+      <section>
+        <div className="container has-text-danger">
+          <p>{restockErrorMsg}</p>
         </div>
       </section>
 
@@ -244,6 +294,11 @@ const VendingMachine = () => {
       <section>
         <div className="container has-text-danger">
           <p>{successMsg}</p>
+        </div>
+      </section>
+      <section>
+        <div className="container has-text-danger">
+          <p>{restockMsg}</p>
         </div>
       </section>
 
