@@ -20,9 +20,9 @@ module.exports = {
       },
       keyframes: {
         wiggle: {
-          '0%': { transform: 'translateX(-180%)' },
-          '50%': { transform: 'translateX(200%)' },
-          '100%': { transform: 'translateX(-180%)' },
+          '0%': { transform: 'translateX(-150%)' },
+          '50%': { transform: 'translateX(150%)' },
+          '100%': { transform: 'translateX(-150%)' },
         },
         updown: {
           '0%': { transform: 'translateY(0%)'},

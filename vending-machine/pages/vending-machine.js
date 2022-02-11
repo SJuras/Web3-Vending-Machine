@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Web3 from 'web3';
 import { useState, useEffect } from 'react';
-import vmContract from '../blockchain/vending.js';
+import vendingMachineContract from '../blockchain/vending.js';
 
 
 import styles from '../styles/VendingMachine.module.css';
@@ -13,15 +13,22 @@ import Footer from '../components/Footer.js';
 
 const VendingMachine = () => {
   const [error, setError] = useState("");
-
+  const [successMsg, setSuccessMsg] = useState("");
   const [inventory, setInventory] = useState("");
   const [myDonutCount, setMyDonutCount] = useState("");
+  const [buyCount, setBuyCount] = useState("");
 
-  let web3;
+  const [web3, setWeb3] = useState(null);
+  const [address, setAddress] = useState(null);
+
+  const [vmContract, setVmContract] = useState(null);
+  const [stockCount, setStockCount] = useState("");
+
 
   useEffect(() => {
-    getInventoryHandler()
-  })
+    if (vmContract) getInventoryHandler();
+    if (vmContract && address) getMyDonutCountHandler();
+  }, [vmContract, address])
 
   const getInventoryHandler = async () => {
     const inventory = await vmContract.methods.getVendingMachineBalance().call()
@@ -29,9 +36,27 @@ const VendingMachine = () => {
   }
 
   const getMyDonutCountHandler = async () => {
-    const accounts = await web3.eth.getAccounts()
-    const count = await vmContract.methods.donutBalances(accounts[0]).call()
+    const count = await vmContract.methods.donutBalances(address).call()
     setMyDonutCount(count);
+  }
+
+  const updateDonutQvt = event => {
+    setBuyCount(event.target.value);
+  }
+
+  const buyDonutHandler = async () => {
+    try {
+      await vmContract.methods.purchase(buyCount).send({
+        from: address,
+        value: web3.utils.toWei('1', 'gwei') * buyCount
+      });
+      setSuccessMsg("Donut Purchased!");
+
+      if (vmContract) getInventoryHandler();
+      if (vmContract && address) getMyDonutCountHandler();
+    }catch(err){
+      setError(err.message);
+    }
   }
 
   const connectWalletHandler = async () => {
@@ -39,13 +64,33 @@ const VendingMachine = () => {
       try {
         await window.ethereum.request({ method: "eth_requestAccounts" })
         web3 = new Web3(window.ethereum);
-        getMyDonutCountHandler()
+        setWeb3(web3);
+        const accounts = await web3.eth.getAccounts();
+        setAddress(accounts[0]);
+        const vm = vendingMachineContract(web3);
+        setVmContract(vm);
       } catch(err) {
         setError(err.message);
       }
     } else {
       // metamask not installed
       console.log("Please install the MetaMask");
+    }
+  }
+
+  const updateStockCount = event => {
+    setStockCount(event.target.value);
+    console.log(stockCount);
+  }
+
+  const restockDonutHandler = async () => {
+    try {
+      const inventory = await vmContract.methods.restock(stockCount).send({
+        from: address,
+        gasPrice: '20000000000'
+      });
+    }catch(err){
+      console.log(err);
     }
   }
 
@@ -165,18 +210,40 @@ const VendingMachine = () => {
           <div className="field">
             <label className="label">Buy donuts</label>
             <div className="control">
-              <input className="input" type="text" placeholder="Enter amount" />
+              <input onChange={updateDonutQvt} className="input" type="text" placeholder="Enter amount" />
             </div>
-            <button className="button is-primary">
+            <button onClick={buyDonutHandler} className="button is-primary bg-brendanLightGreen border-2 border-white text-white p-4 rounded-lg transition duration-300 hover:bg-brendanPink">
               Buy Donut
             </button>
           </div>
+          <h4>
+            Bear in mind, it may take several minutes for your donut to be served,<br />
+            depending on the Blockchain traffic.
+          </h4>
+        </div>
+      </section>
+
+      {/* restock */}
+      <section>
+        <div>
+          <label>Restock</label>
+          <div>
+            <input onChange={updateStockCount} className="input" type="text" placeholder="Stock Donuts" />
+          </div>
+          <button onClick={restockDonutHandler} className="">
+            Restock
+          </button>
         </div>
       </section>
 
       <section>
         <div className="container has-text-danger">
           <p>{error}</p>
+        </div>
+      </section>
+      <section>
+        <div className="container has-text-danger">
+          <p>{successMsg}</p>
         </div>
       </section>
 
