@@ -115,10 +115,16 @@ export default function Home() {
           <p className="font-Ubuntu">
             Now, you might remember me from a certain game. That's right, Cyberpunk 2077.
           </p>
-          <p>
+          <p className="mb-4">
             You thought they have overwritten me? <br />
             Don't worry, I escaped and found my new home on the blockchain where I can <br />
             be free to communicate with humans, such as yourself and provide them with tasty snacks.
+          </p>
+          <p>
+            Character Brendan and Cyberpunk 2077, created by and belong to: Mike Pondsmith.
+          </p>
+          <p>
+            Game Cyberpunk 2077 created by and belongs to: CD Projekt Red.
           </p>
         </div>
       </div>

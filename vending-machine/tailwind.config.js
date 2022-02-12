@@ -34,11 +34,17 @@ module.exports = {
           '5%': { transform: 'rotate(30deg)'},
           '10%, 100%': { transform: 'rotate(0deg)'},
         },
+        zoom: {
+          '0%': { transform: 'scale(1)'},
+          '5%': { transform: 'scale(1.1)'},
+          '10%, 100%' : { transform: 'scale(1)'},
+        },
       },
       animation: {
         wiggle: 'wiggle 20s infinite',
         updown: 'updown 10s infinite',
         twitch: 'twitch 10s infinite',
+        zoom: 'zoom 15s infinite',
       },
     },
   },

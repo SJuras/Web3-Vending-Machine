@@ -179,14 +179,22 @@ const VendingMachine = () => {
       </div>
 
       {/* half and half */}
-      <div className="w-full flex flex-col md:flex-row justify-center items-start bg-brendanPink">
-        <div className="w-full md:w-1/2 flex justify-center items-center">
+      <div className="w-full flex flex-col md:flex-row justify-center items-end bg-brendanPink">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center">
           <div className="flex justify-center items-start">
-            <h2 className="text-white text-4xl text-center md:text mb-4">Donuts Available: {inventory}</h2>
+            <h2 className="text-white text-4xl text-center md:text mb-8">Donuts Available: {inventory}</h2>
+          </div>
+          <div>
+            <h4 className="text-2xl font-bold text-white text-center">Coming soon!</h4>
+            <div className="flex justify-center">
+              <div className="w-3/4 md:w-1/2 pb-4 animate-[zoom_15s_infinite]">
+                <img className="object-contain" src="images/nematode.png" alt="cyberpunk nematode" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-full md:w-1/2 flex justify-center items-center bg-brendanLightGreen p-4 md:rounded-tl-lg">
-          <div className="w-full p-4 border-4 border-zinc-900 bg-brendanDarkGreen rounded-lg">
+          <div className="w-full p-4 border-4 border-zinc-900 bg-brendanDarkGreen rounded-lg pb-12">
             <div className="mb-4">
               <h2 className="text-center md:text-left text-white text-2xl">Your donuts: {myDonutCount}</h2>
             </div>
