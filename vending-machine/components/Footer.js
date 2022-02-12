@@ -10,7 +10,7 @@ export default function Home() {
           <h4 className="font-Infinite text-xl">BRENDAN</h4>
           <p>Decentralized Vending Machine</p>
         </div>
-        <div className="w-full md:w-1/3 mb-4">
+        <div className="w-full md:w-1/3 mb-4 flex flex-col md:justify-center md:items-center">
           <h5 className="text-xl">Follow Us</h5>
           <ul className="">
             <li className="group"><a href="https://github.com/SJuras" className="flex group"><span><FaGithub className="inline transition duration-300 mr-1 group-hover:text-brendanPink -mt-1" /></span> <p className="transition duration-300 group-hover:text-brendanPink">GitHub</p></a></li>

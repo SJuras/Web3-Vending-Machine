@@ -194,19 +194,19 @@ const VendingMachine = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 flex justify-center items-center bg-brendanLightGreen p-4 md:rounded-tl-lg">
-          <div className="w-full p-4 border-4 border-zinc-900 bg-brendanDarkGreen rounded-lg pb-12">
+          <div className="w-full p-4 border-4 border-zinc-900 bg-brendanDarkGreen rounded-lg">
             <div className="mb-4">
               <h2 className="text-center md:text-left text-white text-2xl">Your donuts: {myDonutCount}</h2>
             </div>
             {/* buy donuts */}
-            <div className="container flex flex-col md:flex-row justify-center items-center">
+            <div className="container flex flex-col md:flex-row justify-center items-start">
               <div className="w-full md:w-1/2 p-2">
                 <div className="field">
                   <label className="label text-white text-xl">Buy donuts</label>
                   <div className="control">
                     <input onChange={updateDonutQvt} className="input mt-2 p-2 text-white bg-brendanLightGreen border-2 border-green-400 rounded-lg outline-none mb-4 focus:border-green-200" type="text" placeholder="Enter amount" />
                   </div>
-                  <button onClick={buyDonutHandler} className="button is-primary bg-brendanPink outline-none text-white p-4 rounded-lg mb-8 transition duration-300 hover:bg-brendanLightPink focus:bg-brendanLightPink">
+                  <button onClick={buyDonutHandler} className="button is-primary bg-brendanPink outline-none text-white p-4 rounded-lg mb-8 border-2 border-brendanPink transition duration-300 hover:bg-brendanLightPink focus:bg-brendanLightPink">
                     Buy Donut
                   </button>
                 </div>
@@ -214,7 +214,7 @@ const VendingMachine = () => {
                   Bear in mind, it may take several minutes for your donut to be served,
                   depending on the Blockchain traffic.<br /><br />
                 </h4>
-                <div className="w-full p-2 py-4 border-2 border-green-400 bg-brendanLightGreen rounded-lg mb-2">
+                <div className="md:hidden w-full p-2 py-4 border-2 border-green-400 bg-brendanLightGreen rounded-lg mb-2">
                   <p className="text-xl text-brendanLightPink">{successMsg}</p>
                   <p className="text-xl text-red-300">{error}</p>
                 </div>
@@ -233,6 +233,20 @@ const VendingMachine = () => {
                   Only the maintenance can restock the donut supply. When the supply is depleted please
                   constact the maintenance crew:<br />
                 </h4>
+                <div className="md:hidden w-full p-2 py-4 border-2 border-green-400 bg-brendanLightGreen rounded-lg mb-2">
+                  <p className="text-xl text-brendanLightPink">{restockMsg}</p>
+                  <p className="text-xl text-red-300">{error}</p>
+                </div>
+              </div>
+            </div>
+            <div className="hidden md:flex flex-col md:flex-row justify-center items-center">
+              <div className="w-full md_w-1/2 p-2">
+                <div className="w-full p-2 py-4 border-2 border-green-400 bg-brendanLightGreen rounded-lg mb-2">
+                  <p className="text-xl text-brendanLightPink">{successMsg}</p>
+                  <p className="text-xl text-red-300">{error}</p>
+                </div>
+              </div>
+              <div className="w-full md_w-1/2 p-2">
                 <div className="w-full p-2 py-4 border-2 border-green-400 bg-brendanLightGreen rounded-lg mb-2">
                   <p className="text-xl text-brendanLightPink">{restockMsg}</p>
                   <p className="text-xl text-red-300">{error}</p>
@@ -243,72 +257,26 @@ const VendingMachine = () => {
         </div>
       </div>
 
-      {/* vending machine inventory */}
-      <section>
-        <div className="container">
-          <h2>Vending Machine Inventory: {inventory}</h2>
-        </div>
-      </section>
-
-      {/* user inventory */}
-      <section>
-        <div className="container">
-          <h2>My donuts: {myDonutCount}</h2>
-        </div>
-      </section>
-
-      {/* buy donuts */}
-      <section>
-        <div className="container">
-          <div className="field">
-            <label className="label">Buy donuts</label>
-            <div className="control">
-              <input onChange={updateDonutQvt} className="input" type="text" placeholder="Enter amount" />
+      <div>
+        <div className="flex flex-col md:flex-row bg-brendanLightGreen p-4">
+          <div className="flex flex-col-reverse md:flex-row w-full p-4 border-4 border-zinc-900 bg-brendanDarkGreen rounded-lg">
+            <div className="w-full md:w-1/2">
+              <p className="text-white">left</p>
             </div>
-            <button onClick={buyDonutHandler} className="button is-primary bg-brendanPink border-2 border-white text-white p-4 rounded-lg transition duration-300 hover:bg-brendanLightPink">
-              Buy Donut
-            </button>
+            <div className="w-full md:w-1/2 text-center">
+              <h4 className="text-white font-bold text-xl">How to Use</h4>
+              <ul>
+                <li><p className="text-white">1. Open your MetaMask by clicking "Connect Wallet" button at the top of the page</p></li>
+                <li><p className="text-white">2. Enter the number of donuts you wish to purchase in "Enter amount" rectangle</p></li>
+                <li><p className="text-white">3. Press "Buy Donut" button</p></li>
+                <li><p className="text-white">4. CLick "Confirm Transaction" on your MetaMask</p></li>
+                <li><p className="text-white">5. Wait a moment for transaction to complete</p></li>
+                <li><p className="text-white">6. Your donut(s) will be added to the "Your donuts" counter.</p></li>
+              </ul>
+            </div>
           </div>
-          <h4>
-            Bear in mind, it may take several minutes for your donut to be served,<br />
-            depending on the Blockchain traffic.
-          </h4>
         </div>
-      </section>
-
-      {/* restock */}
-      <section>
-        <div>
-          <label>Restock</label>
-          <div>
-            <input onChange={updateStockCount} className="input" type="text" placeholder="Stock Donuts" />
-          </div>
-          <button onClick={restockDonutHandler} className="bg-brendanLightGreen border-2 border-white text-white p-4 rounded-lg transition duration-300 hover:bg-brendanPink">
-            Restock
-          </button>
-        </div>
-      </section>
-      <section>
-        <div className="container has-text-danger">
-          <p>{restockErrorMsg}</p>
-        </div>
-      </section>
-
-      <section>
-        <div className="container has-text-danger">
-          <p>{error}</p>
-        </div>
-      </section>
-      <section>
-        <div className="container has-text-danger">
-          <p>{successMsg}</p>
-        </div>
-      </section>
-      <section>
-        <div className="container has-text-danger">
-          <p>{restockMsg}</p>
-        </div>
-      </section>
+      </div>
 
 
       <Footer />
