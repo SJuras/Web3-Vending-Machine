@@ -7,7 +7,7 @@ export default function Home() {
     <footer className="bg-brendanLightGreen p-4">
       <div className="bg-brendanDarkGreen p-4 text-brendanWhite rounded-lg mb-4 border-4 border-zinc-900 w-full flex flex-col md:flex-row justify-center items-start">
         <div className="w-full md:w-1/3 mb-4">
-          <h4 className="font-Infinite text-xl">BRENDAN</h4>
+          <h4 className="font-Infinite text-2xl">BRENDAN</h4>
           <p>Decentralized Vending Machine</p>
         </div>
         <div className="w-full md:w-1/3 mb-4 flex flex-col md:justify-center md:items-center">

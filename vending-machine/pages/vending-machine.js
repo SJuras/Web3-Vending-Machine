@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image'
 import Link from 'next/link'
 import Web3 from 'web3';
+import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import vendingMachineContract from '../blockchain/vending.js';
 
@@ -233,6 +235,8 @@ const VendingMachine = () => {
                   Only the maintenance can restock the donut supply. When the supply is depleted please
                   constact the maintenance crew:<br />
                 </h4>
+                <a href="https://www.facebook.com/stjepko.juras" className="flex group mb-2"><span><FaFacebook className="text-white inline transition duration-300 mr-1 group-hover:text-brendanPink -mt-1" /></span><p className="text-white transition duration-300 group-hover:text-brendanPink">Facebook</p></a>
+                <a href="https://github.com/SJuras" className="flex group mb-2"><span><FaGithub className="text-white inline transition duration-300 mr-1 group-hover:text-brendanPink -mt-1" /></span> <p className="text-white transition duration-300 group-hover:text-brendanPink">GitHub</p></a>
                 <div className="md:hidden w-full p-2 py-4 border-2 border-green-400 bg-brendanLightGreen rounded-lg mb-2">
                   <p className="text-xl text-brendanLightPink">{restockMsg}</p>
                   <p className="text-xl text-red-300">{error}</p>
@@ -260,10 +264,27 @@ const VendingMachine = () => {
       <div>
         <div className="flex flex-col md:flex-row bg-brendanLightGreen p-4">
           <div className="flex flex-col-reverse md:flex-row w-full p-4 border-4 border-zinc-900 bg-brendanDarkGreen rounded-lg">
-            <div className="w-full md:w-1/2">
-              <p className="text-white">left</p>
+            <div className="w-full md:w-1/2 flex flex-col md:flex-row justify-center items-center">
+              <div className="w-full md:w-1/3 m-2 p-2">
+                <div className="w-full mb-2 hover:">
+                  <img className="object-contain rounded-lg" src="images/larva.png" alt="cyberpunk larva noodles" />
+                </div>
+                <h4 className="text-xl text-center font-bold text-brendanLightPink">OUT OF STOCK</h4>
+              </div>
+              <div className=" w-full md:w-1/3 m-2 p-2">
+                <div className="w-full mb-2">
+                  <img className="object-contain rounded-lg" src="images/recycled.png" alt="cyberpunk recycled food" />
+                </div>
+                <h4 className="text-xl text-center text-brendanLightPink">OUT OF STOCK</h4>
+              </div>
+              <div className="w-full md:w-1/3 m-2 p-2">
+                <div className="w-full mb-2">
+                  <img className="object-contain rounded-lg" src="images/vodka.png" alt="cyberpunk vodka" />
+                </div>
+                <h4 className="text-xl text-center text-brendanLightPink">OUT OF STOCK</h4>
+              </div>
             </div>
-            <div className="w-full md:w-1/2 text-center">
+            <div className="w-full md:w-1/2 text-center mb-2 md:mb-0">
               <h4 className="text-white font-bold text-xl">How to Use</h4>
               <ul>
                 <li><p className="text-white">1. Open your MetaMask by clicking "Connect Wallet" button at the top of the page</p></li>
